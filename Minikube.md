@@ -81,6 +81,16 @@ Prints the installed Minikube version to the terminal (e.g., `minikube version: 
 
 ---
 
+## 🔌 Post-Requirement: kubectl
+
+> **Minikube creates and manages the cluster, but you need kubectl to interact with it.**
+
+Once a Minikube cluster is running, use **kubectl** to deploy workloads, inspect resources, and manage the cluster. Minikube automatically updates your `~/.kube/config` file with the new cluster's connection details upon creation.
+
+> 📄 Install kubectl **before** proceeding to cluster creation. See the [kubectl Installation & Setup Guide](./Kubectl.md).
+
+---
+
 ## 4. Start the Minikube Cluster
 
 ```bash
@@ -175,3 +185,11 @@ minikube stop
 # Delete cluster (permanent)
 minikube delete
 ```
+
+---
+
+## 🔗 Related Guides
+
+- [Docker Installation & Setup Guide](./Docker.md) — required prerequisite
+- [kubectl Installation & Setup Guide](./Kubectl.md) — required to interact with Minikube clusters
+- [KIND Installation & Setup Guide](./Kind.md) — alternative local Kubernetes option

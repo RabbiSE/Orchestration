@@ -229,6 +229,12 @@ sudo mv ./kind /usr/local/bin/kind
 # Verify
 kind version
 
+# Create cluster config file
+vi cluster-config-file.yml
+
+# Verify config file contents
+cat cluster-config-file.yml
+
 # Create cluster with config
 kind create cluster --name=cluster --config=cluster-config-file.yml
 

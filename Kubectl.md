@@ -24,6 +24,17 @@ sudo apt-get install -y curl wget apt-transport-https tree
 
 Installs essential utilities required before downloading kubectl. Notably, `curl` is used twice in the kubectl download command — once to resolve the latest stable version and once to download the binary itself.
 
+### 3. Install & Configure Docker
+
+```bash
+sudo apt-get install -y docker.io
+sudo systemctl enable --now docker
+sudo usermod -aG docker $USER
+newgrp docker
+```
+
+kubectl connects to Kubernetes clusters that run on top of Docker (such as Minikube or KIND). Docker must be installed and running before creating any cluster that kubectl will manage.
+
 > 📄 For detailed explanations of each command above, refer to the [Docker Installation & Setup Guide](./Docker.md).
 
 ---
