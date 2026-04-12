@@ -129,3 +129,5 @@ kubectl version --client
 
 - [Docker Installation & Setup Guide](./Docker.md) — required prerequisite
 - [Minikube Installation & Setup Guide](./Minikube.md) — recommended local cluster to use with kubectl
+- [KIND Installation & Setup Guide](./Kind.md) — alternative local Kubernetes option
+- [Helm Installation & Setup Guide](./Helm.md) — package manager for deploying applications onto Kubernetes
