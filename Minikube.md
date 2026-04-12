@@ -6,7 +6,7 @@ A step-by-step guide for installing and running **Minikube** — a local Kuberne
 
 ## ⚠️ Prerequisites
 
-Before proceeding with Minikube, you must have completed the following steps from the **Docker Installation & Setup Guide**:
+Before proceeding with Minikube, ensure the following steps have been completed:
 
 ### 1. Update Package Index
 
@@ -34,8 +34,6 @@ newgrp docker
 ```
 
 Minikube uses Docker as its underlying driver to run the Kubernetes node. Docker must be installed, the service must be running, and your user must have Docker group access before `minikube start` will work.
-
-> 📄 For detailed explanations of each Docker command above, refer to the [Docker Installation & Setup Guide](./Docker.md).
 
 ---
 
@@ -85,9 +83,7 @@ Prints the installed Minikube version to the terminal (e.g., `minikube version: 
 
 > **Minikube creates and manages the cluster, but you need kubectl to interact with it.**
 
-Once a Minikube cluster is running, use **kubectl** to deploy workloads, inspect resources, and manage the cluster. Minikube automatically updates your `~/.kube/config` file with the new cluster's connection details upon creation.
-
-> 📄 Install kubectl **before** proceeding to cluster creation. See the [kubectl Installation & Setup Guide](./Kubectl.md).
+Once a Minikube cluster is running, use **kubectl** to deploy workloads, inspect resources, and manage the cluster. Minikube automatically updates your `~/.kube/config` file with the new cluster's connection details upon creation. Install kubectl before proceeding to cluster creation.
 
 ---
 
@@ -104,7 +100,7 @@ Bootstraps a single-node local Kubernetes cluster. On first run, Minikube will d
 | `--driver=docker` | Uses Docker as the container runtime/driver to run the Kubernetes node |
 | `--vm=true` | Runs the cluster inside a VM-like isolated environment within Docker, providing better network isolation |
 
-> ⚠️ Requires Docker to be running and your user to have Docker group access (see the Docker setup guide). Minikube will allocate CPU and memory from your host machine for the cluster.
+> ⚠️ Requires Docker to be running and your user to have Docker group access. Minikube will allocate CPU and memory from your host machine for the cluster.
 
 ---
 
@@ -185,12 +181,3 @@ minikube stop
 # Delete cluster (permanent)
 minikube delete
 ```
-
----
-
-## 🔗 Related Guides
-
-- [Docker Installation & Setup Guide](./Docker.md) — required prerequisite
-- [kubectl Installation & Setup Guide](./Kubectl.md) — required to interact with Minikube clusters
-- [KIND Installation & Setup Guide](./Kind.md) — alternative local Kubernetes option
-- [Helm Installation & Setup Guide](./Helm.md) — package manager for deploying applications onto Kubernetes
