@@ -6,7 +6,7 @@ A step-by-step guide for installing and using **Helm** — the package manager f
 
 ## ⚠️ Prerequisites
 
-Before proceeding with Helm, you must have completed the following steps from the **Docker Installation & Setup Guide**:
+Before proceeding with Helm, ensure the following steps have been completed:
 
 ### 1. Update Package Index
 
@@ -35,19 +35,13 @@ newgrp docker
 
 Helm deploys applications onto Kubernetes clusters that run on top of Docker. Docker must be installed and running before any Helm chart can be deployed.
 
-> 📄 For detailed explanations of each command above, refer to the [Docker Installation & Setup Guide](./Docker.md).
-
 ---
 
 ## 🔌 Kubernetes Cluster Requirement
 
 > **Helm is a deployment tool — it requires a running Kubernetes cluster and kubectl to function.**
 
-Helm communicates with your cluster through kubectl's configuration at `~/.kube/config`. Both must be set up before running any `helm install` commands.
-
-> 📄 See the [kubectl Installation & Setup Guide](./Kubectl.md) and one of the following cluster guides:
-> - [Minikube Installation & Setup Guide](./Minikube.md)
-> - [KIND Installation & Setup Guide](./Kind.md)
+Helm communicates with your cluster through kubectl's configuration at `~/.kube/config`. Both kubectl and a Kubernetes cluster must be set up before running any `helm install` commands.
 
 ---
 
@@ -216,7 +210,7 @@ Removes the specified Helm release and deletes all associated Kubernetes resourc
 ## ✅ Quick Reference
 
 ```bash
-# Prerequisites (from Docker.md)
+# Prerequisites
 sudo apt-get -y update
 sudo apt-get install -y curl wget apt-transport-https tree
 sudo apt-get install -y docker.io
@@ -247,12 +241,3 @@ helm rollback installationname revnumber --namespace=namespace
 # Uninstall a release
 helm uninstall installationname
 ```
-
----
-
-## 🔗 Related Guides
-
-- [Docker Installation & Setup Guide](./Docker.md) — required prerequisite
-- [kubectl Installation & Setup Guide](./Kubectl.md) — required to connect Helm to a cluster
-- [Minikube Installation & Setup Guide](./Minikube.md) — local Kubernetes cluster to deploy charts onto
-- [KIND Installation & Setup Guide](./Kind.md) — alternative local Kubernetes cluster option
