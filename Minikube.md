@@ -193,3 +193,4 @@ minikube delete
 - [Docker Installation & Setup Guide](./Docker.md) — required prerequisite
 - [kubectl Installation & Setup Guide](./Kubectl.md) — required to interact with Minikube clusters
 - [KIND Installation & Setup Guide](./Kind.md) — alternative local Kubernetes option
+- [Helm Installation & Setup Guide](./Helm.md) — package manager for deploying applications onto Kubernetes
