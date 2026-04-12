@@ -128,12 +128,3 @@ sudo apt-get install -y docker-compose-v2
 sudo systemctl status docker
 docker --version
 ```
-
----
-
-## 🔗 Related Guides
-
-- [Minikube Installation & Setup Guide](./Minikube.md) — local Kubernetes cluster using Docker as driver
-- [kubectl Installation & Setup Guide](./Kubectl.md) — CLI tool to interact with Kubernetes clusters
-- [KIND Installation & Setup Guide](./Kind.md) — lightweight local Kubernetes clusters using Docker containers
-- [Helm Installation & Setup Guide](./Helm.md) — package manager for deploying applications onto Kubernetes
