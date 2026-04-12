@@ -6,7 +6,7 @@ A step-by-step guide for installing **kubectl** — the official Kubernetes comm
 
 ## ⚠️ Prerequisites
 
-Before proceeding with kubectl, you must have completed the following steps from the **Docker Installation & Setup Guide**:
+Before proceeding with kubectl, ensure the following steps have been completed:
 
 ### 1. Update Package Index
 
@@ -35,8 +35,6 @@ newgrp docker
 
 kubectl connects to Kubernetes clusters that run on top of Docker (such as Minikube or KIND). Docker must be installed and running before creating any cluster that kubectl will manage.
 
-> 📄 For detailed explanations of each command above, refer to the [Docker Installation & Setup Guide](./Docker.md).
-
 ---
 
 ## 🔌 Kubernetes Cluster Requirement
@@ -45,11 +43,11 @@ kubectl connects to Kubernetes clusters that run on top of Docker (such as Minik
 
 kubectl must be connected to a running Kubernetes cluster to do anything meaningful. Once installed, you should pair it with one of the following:
 
-| Cluster Tool | Best For | Guide |
-|---|---|---|
-| [Minikube](./Minikube.md) | Local single-node development & testing | See `Minikube.md` |
-| **KIND** (Kubernetes IN Docker) | Lightweight local clusters, CI/CD pipelines | Runs Kubernetes nodes as Docker containers |
-| **Kubeadm** | Production-grade multi-node cluster bootstrapping | Used for bare-metal or cloud VM deployments |
+| Cluster Tool | Best For |
+|---|---|
+| **Minikube** | Local single-node development & testing |
+| **KIND** (Kubernetes IN Docker) | Lightweight local clusters, CI/CD pipelines |
+| **Kubeadm** | Production-grade multi-node cluster bootstrapping |
 
 kubectl automatically reads cluster connection details (API server address, credentials) from a configuration file located at `~/.kube/config`, which is generated when you set up any of the cluster tools above.
 
@@ -109,7 +107,7 @@ Prints the installed kubectl client version (e.g., `Client Version: v1.30.0`). T
 ## ✅ Quick Reference
 
 ```bash
-# Prerequisites (from Docker.md)
+# Prerequisites
 sudo apt-get -y update
 sudo apt-get install -y curl wget apt-transport-https tree
 
@@ -122,12 +120,3 @@ sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 # Verify installation
 kubectl version --client
 ```
-
----
-
-## 🔗 Related Guides
-
-- [Docker Installation & Setup Guide](./Docker.md) — required prerequisite
-- [Minikube Installation & Setup Guide](./Minikube.md) — recommended local cluster to use with kubectl
-- [KIND Installation & Setup Guide](./Kind.md) — alternative local Kubernetes option
-- [Helm Installation & Setup Guide](./Helm.md) — package manager for deploying applications onto Kubernetes
