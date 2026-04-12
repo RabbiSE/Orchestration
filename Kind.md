@@ -6,7 +6,7 @@ A step-by-step guide for installing and running **KIND** (Kubernetes IN Docker) 
 
 ## ⚠️ Prerequisites
 
-Before proceeding with KIND, you must have completed the following steps from the **Docker Installation & Setup Guide**:
+Before proceeding with KIND, ensure the following steps have been completed:
 
 ### 1. Update Package Index
 
@@ -34,8 +34,6 @@ newgrp docker
 ```
 
 KIND runs each Kubernetes node as a Docker container, so Docker must be installed and running before any KIND cluster can be created.
-
-> 📄 For detailed explanations of each command above, refer to the [Docker Installation & Setup Guide](./Docker.md).
 
 ---
 
@@ -99,9 +97,7 @@ Prints the installed KIND version to the terminal (e.g., `kind v0.31.0 go1.xx li
 
 > **KIND creates and manages clusters, but you need kubectl to interact with them.**
 
-Once a KIND cluster is running, use **kubectl** to deploy workloads, inspect resources, and manage the cluster. KIND automatically updates your `~/.kube/config` file with the new cluster's connection details upon creation.
-
-> 📄 Install kubectl **before** proceeding to cluster creation. See the [kubectl Installation & Setup Guide](./Kubectl.md).
+Once a KIND cluster is running, use **kubectl** to deploy workloads, inspect resources, and manage the cluster. KIND automatically updates your `~/.kube/config` file with the new cluster's connection details upon creation. Install kubectl before proceeding to cluster creation.
 
 ---
 
@@ -241,12 +237,3 @@ kind create cluster --name=cluster --config=cluster-config-file.yml
 # Delete cluster
 kind delete cluster --name=clustername
 ```
-
----
-
-## 🔗 Related Guides
-
-- [Docker Installation & Setup Guide](./Docker.md) — required prerequisite
-- [kubectl Installation & Setup Guide](./Kubectl.md) — required to interact with KIND clusters
-- [Minikube Installation & Setup Guide](./Minikube.md) — alternative local Kubernetes option
-- [Helm Installation & Setup Guide](./Helm.md) — package manager for deploying applications onto Kubernetes
