@@ -24,17 +24,6 @@ sudo apt-get install -y curl wget apt-transport-https tree
 
 Installs essential utilities required before downloading Helm. `curl` is used in the next section to download the Helm installation script.
 
-### 3. Install & Configure Docker
-
-```bash
-sudo apt-get install -y docker.io
-sudo systemctl enable --now docker
-sudo usermod -aG docker $USER
-newgrp docker
-```
-
-Helm deploys applications onto Kubernetes clusters that run on top of Docker. Docker must be installed and running before any Helm chart can be deployed.
-
 ---
 
 ## 🔌 Kubernetes Cluster Requirement
@@ -213,10 +202,6 @@ Removes the specified Helm release and deletes all associated Kubernetes resourc
 # Prerequisites
 sudo apt-get -y update
 sudo apt-get install -y curl wget apt-transport-https tree
-sudo apt-get install -y docker.io
-sudo systemctl enable --now docker
-sudo usermod -aG docker $USER
-newgrp docker
 
 # Download and run Helm installer
 curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-4
