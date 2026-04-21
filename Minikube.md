@@ -22,18 +22,7 @@ Refreshes the local package index to ensure the latest package versions are avai
 sudo apt-get install -y curl wget apt-transport-https tree
 ```
 
-Installs essential utilities required for downloading and setting up Minikube and Docker. Notably, `curl` is used in the very next section to download the Minikube binary, and `apt-transport-https` is required to allow `apt` to fetch packages over HTTPS.
-
-### 3. Install Docker Engine
-
-```bash
-sudo apt-get install -y docker.io
-sudo systemctl enable --now docker
-sudo usermod -aG docker $USER
-newgrp docker
-```
-
-Minikube uses Docker as its underlying driver to run the Kubernetes node. Docker must be installed, the service must be running, and your user must have Docker group access before `minikube start` will work.
+Installs essential utilities required for downloading and setting up Minikube. Notably, `curl` is used in the very next section to download the Minikube binary, and `apt-transport-https` is required to allow `apt` to fetch packages over HTTPS.
 
 ---
 
@@ -159,6 +148,10 @@ Completely removes the Minikube cluster, including all associated containers, vo
 ## ✅ Quick Reference
 
 ```bash
+# Prerequisites
+sudo apt-get -y update
+sudo apt-get install -y curl wget apt-transport-https tree
+
 # Install Minikube
 curl -LO https://github.com/kubernetes/minikube/releases/latest/download/minikube-linux-amd64
 sudo install minikube-linux-amd64 /usr/local/bin/minikube && rm minikube-linux-amd64
