@@ -31,9 +31,10 @@ sudo apt-get install -y docker.io
 sudo systemctl enable --now docker
 sudo usermod -aG docker $USER
 newgrp docker
+sudo systemctl enable --now docker
 ```
 
-KIND runs each Kubernetes node as a Docker container, so Docker must be installed and running before any KIND cluster can be created.
+KIND runs each Kubernetes node as a Docker container, so Docker must be installed and running before any KIND cluster can be created. Running `sudo systemctl enable --now docker` again after `newgrp docker` ensures the daemon is fully active after the group change.
 
 ---
 
@@ -207,13 +208,14 @@ Permanently removes the specified KIND cluster and all its associated Docker con
 ## ✅ Quick Reference
 
 ```bash
-# Prerequisites (from Docker.md)
+# Prerequisites
 sudo apt-get -y update
 sudo apt-get install -y curl wget apt-transport-https tree
 sudo apt-get install -y docker.io
 sudo systemctl enable --now docker
 sudo usermod -aG docker $USER
 newgrp docker
+sudo systemctl enable --now docker
 
 # Download KIND (x86_64 only)
 [ $(uname -m) = x86_64 ] && curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.31.0/kind-linux-amd64
